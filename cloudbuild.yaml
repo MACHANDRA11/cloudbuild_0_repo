@@ -25,7 +25,7 @@ steps:
     cp -r tf_template_file tf_copy
     ls 
     cd tf_copy
-    cat main.tf | sed -e "s/gcp_project_id/\${_NAME}/g"
+    cat main.tf | sed -e "s/gcp_project_id/\$\{_NAME}/g"
     # echo "Pushing changes to git config repo ..."
     # ls /root/
     # git add -A
