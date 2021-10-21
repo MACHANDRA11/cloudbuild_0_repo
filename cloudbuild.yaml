@@ -18,10 +18,8 @@ steps:
   args:
   - '-c'
   - |
-    cp -r tf_template /root/tf_template_copy
-    echo "Pushing changes to git config repo ..."
-    ls /root/
-    git clone --recurse-submodules git@github.com:MACHANDRA11/cloudbuild_0_repo.git
+    git clone https://github.com/MACHANDRA11/tf_template.git
+    cd tf_template
     git remote set-url origin https://github.com/MACHANDRA11/cloudbuild_0_repo.git
     git remote -v
     git config --global user.name "MACHANDRA11"
@@ -32,7 +30,6 @@ steps:
     ls /root/
     git add -A
     git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
-    git push origin master
   volumes:
   - name: 'ssh'
     path: /root/.ssh
