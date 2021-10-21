@@ -62,7 +62,7 @@ availableSecrets:
     env: 'SSH_KEY'
 
 substitutions:
-  _NAME_1: v4 # default value
+  _NAME_1: $PROJECT_ID # default value
 
 
 
