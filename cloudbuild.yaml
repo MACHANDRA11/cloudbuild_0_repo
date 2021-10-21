@@ -31,7 +31,7 @@ steps:
     # git add -A
     # git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
   substitutions:
-    _NAME: $PROJECT_ID # default value
+    _NAME: v4 # default value
   volumes:
   - name: 'ssh'
     path: /root/.ssh
