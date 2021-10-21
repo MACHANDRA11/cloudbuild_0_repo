@@ -23,7 +23,10 @@ steps:
     git config --global user.email "chandrakanth.maddana@mediaagility.com"
     git config --list
     cp -r tf_template_file tf_copy
-    ls
+    ls 
+    cd tf_copy
+    cat main.tf | sed -e "s/gcp_project_id/$PROJECT_ID/g"
+    cat main.tf
     # echo "Pushing changes to git config repo ..."
     # ls /root/
     # git add -A
