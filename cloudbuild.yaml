@@ -13,21 +13,19 @@ steps:
   - name: 'ssh'
     path: /root/.ssh
 
-# - name: gcr.io/cloud-builders/git
-#   entrypoint: 'bash'
-#   args:
-#   - '-c'
-#   - |
-#     cp -r tf_template /root/tf_template_copy
-#     echo "Pushing changes to git config repo ..."
-#     git config --global user.name MACHANDRA11
-#     git config --global user.email chandrakanth.maddana@mediaagility.com
-#     git add -A
-#     git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
-#     git push origin master
-#   volumes:
-#   - name: 'ssh'
-#     path: /root/.ssh
+- name: gcr.io/cloud-builders/git
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    cp -r tf_template /root/tf_template_copy
+    echo "Pushing changes to git config repo ..."
+    git add -A
+    git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
+    git push origin master
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
 
 # - id: 'tf plan'
 #   name: 'hashicorp/terraform:1.0.0'
