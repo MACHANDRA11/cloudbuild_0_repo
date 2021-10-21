@@ -20,7 +20,6 @@ steps:
   - |
     git clone https://github.com/MACHANDRA11/tf_template.git
     cd tf_template
-    git remote set-url origin https://github.com/MACHANDRA11/cloudbuild_0_repo.git
     git remote -v
     git config --global user.name "MACHANDRA11"
     git config --global user.email "chandrakanth.maddana@mediaagility.com"
