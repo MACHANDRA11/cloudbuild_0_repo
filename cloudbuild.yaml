@@ -18,42 +18,41 @@ steps:
   args:
   - '-c'
   - |
-    git clone https://github.com/MACHANDRA11/tf_template.git
-    cd tf_template
     git remote -v
     git config --global user.name "MACHANDRA11"
     git config --global user.email "chandrakanth.maddana@mediaagility.com"
     git config --list
-    cp -r tf_template /root/tf_template_copy
-    echo "Pushing changes to git config repo ..."
-    ls /root/
+    cp -r tf_template_file tf_copy
+    ls
+    # echo "Pushing changes to git config repo ..."
+    # ls /root/
     # git add -A
     # git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
   volumes:
   - name: 'ssh'
     path: /root/.ssh
 
-- id: 'tf plan'
-  name: 'hashicorp/terraform:1.0.0'
-  entrypoint: 'sh'
-  args:
-  - '-c'
-  - |
-      echo "branch $BRANCH_NAME"
-      echo "run init"
-      terraform init
-      echo "run validate"
-      terraform validate 
-      echo "run plan"
-      terraform plan -out terraform.plan
-      # terraform apply -auto-approve terraform.plan
-  env:
-  - 'TF_VAR_project_id=$PROJECT_ID'
-  - 'TF_VAR_names=['thps23wa','thpswq2']'
-  - 'TF_VAR_prefix=thmbk'
-  volumes:
-  - name: 'ssh'
-    path: /root/tf_template_copy
+# - id: 'tf plan'
+#   name: 'hashicorp/terraform:1.0.0'
+#   entrypoint: 'sh'
+#   args:
+#   - '-c'
+#   - |
+#       echo "branch $BRANCH_NAME"
+#       echo "run init"
+#       terraform init
+#       echo "run validate"
+#       terraform validate 
+#       echo "run plan"
+#       terraform plan -out terraform.plan
+#       # terraform apply -auto-approve terraform.plan
+  # env:
+  # - 'TF_VAR_project_id=$PROJECT_ID'
+  # - 'TF_VAR_names=['thps23wa','thpswq2']'
+  # - 'TF_VAR_prefix=thmbk'
+  # volumes:
+  # - name: 'ssh'
+  #   path: /root/tf_template_copy
 
 availableSecrets:
   secretManager:
