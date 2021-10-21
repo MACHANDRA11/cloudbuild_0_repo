@@ -20,6 +20,7 @@ steps:
   - |
     cp -r tf_template /root/tf_template_copy
     echo "Pushing changes to git config repo ..."
+    git remote set-url origin https://github.com/MACHANDRA11/cloudbuild_0_repo.git
     git config --global user.name MACHANDRA11
     git config --global user.email chandrakanth.maddana@mediaagility.com
     git add -A
