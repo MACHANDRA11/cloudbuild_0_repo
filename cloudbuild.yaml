@@ -66,7 +66,7 @@ availableSecrets:
 
 substitutions:
   _NAME_1: $PROJECT_ID # default value
-  _NAME_2: "thgsx3ws","tfdce4e"
+  _NAME_2: thgsx3ws",tfdce4e"
   _NAME_3: tfg
 
 
