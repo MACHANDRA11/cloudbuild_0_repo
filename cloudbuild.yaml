@@ -26,9 +26,9 @@ steps:
     git config --global user.name "MACHANDRA11"
     git config --global user.email "chandrakanth.maddana@mediaagility.com"
     git config --list
-    # git add -A
-    # git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
-    # git push origin master
+    git add -A
+    git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
+    git push origin master
   volumes:
   - name: 'ssh'
     path: /root/.ssh
