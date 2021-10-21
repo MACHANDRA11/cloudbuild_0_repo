@@ -1,0 +1,165 @@
+starting build "10aee203-92cf-4f12-a48d-bd4309c5d7cf"
+
+FETCHSOURCE
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /workspace/.git/
+From https://github.com/MACHANDRA11/cloudbuild_0_repo
+ * branch            239f6bfd35b144ecdd53494acda07082124eddb7 -> FETCH_HEAD
+HEAD is now at 239f6bf updated
+BUILD
+Starting Step #0
+Step #0: Already have image (with digest): gcr.io/cloud-builders/git
+Finished Step #0
+Starting Step #1
+Step #1: Already have image (with digest): gcr.io/cloud-builders/git
+Step #1: origin	https://github.com/MACHANDRA11/cloudbuild_0_repo.git (fetch)
+Step #1: origin	https://github.com/MACHANDRA11/cloudbuild_0_repo.git (push)
+Step #1: credential.helper=gcloud.sh
+Step #1: user.name=MACHANDRA11
+Step #1: user.email=chandrakanth.maddana@mediaagility.com
+Step #1: core.repositoryformatversion=0
+Step #1: core.filemode=true
+Step #1: core.bare=false
+Step #1: core.logallrefupdates=true
+Step #1: remote.origin.url=https://github.com/MACHANDRA11/cloudbuild_0_repo.git
+Step #1: remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+Step #1: credential.helper=gcloud.sh
+Step #1: cloudbuild.yaml
+Step #1: known_hosts.github
+Step #1: tf_copy
+Step #1: tf_template_file
+Step #1: main.tf
+Step #1: state.tf
+Step #1: main.tf
+Step #1: state.tf
+Step #1: module "gcs_buckets" {
+Step #1:   source  = "terraform-google-modules/cloud-storage/google"
+Step #1:   version = "2.2"
+Step #1:   project_id  = "devtools-317213"
+Step #1:   names = ["thgsx3ws"]
+Step #1:   prefix = "tfg"
+Step #1: }
+Step #1: Pushing changes to git config repo ...
+Step #1: [master 84bd5c0] Updated with build 10aee203-92cf-4f12-a48d-bd4309c5d7cf from cloudbuild_0_repo commit 239f6bfd35b144ecdd53494acda07082124eddb7
+Step #1:  2 files changed, 13 insertions(+)
+Step #1:  create mode 100644 tf_copy/main.tf
+Step #1:  create mode 100644 tf_copy/state.tf
+Finished Step #1
+Starting Step #2 - "tf plan"
+Step #2 - "tf plan": Pulling image: hashicorp/terraform:1.0.0
+Step #2 - "tf plan": 1.0.0: Pulling from hashicorp/terraform
+Step #2 - "tf plan": 540db60ca938: Pulling fs layer
+Step #2 - "tf plan": a84ab4c8a000: Pulling fs layer
+Step #2 - "tf plan": a82f6d5351c2: Pulling fs layer
+Step #2 - "tf plan": 540db60ca938: Verifying Checksum
+Step #2 - "tf plan": 540db60ca938: Download complete
+Step #2 - "tf plan": a84ab4c8a000: Download complete
+Step #2 - "tf plan": 540db60ca938: Pull complete
+Step #2 - "tf plan": a82f6d5351c2: Verifying Checksum
+Step #2 - "tf plan": a82f6d5351c2: Download complete
+Step #2 - "tf plan": a84ab4c8a000: Pull complete
+Step #2 - "tf plan": a82f6d5351c2: Pull complete
+Step #2 - "tf plan": Digest: sha256:6dafbe34b7c18d189ff18e3dfb7cd5fc4144a2714eb2bc7b6dd9352455e8848a
+Step #2 - "tf plan": Status: Downloaded newer image for hashicorp/terraform:1.0.0
+Step #2 - "tf plan": docker.io/hashicorp/terraform:1.0.0
+Step #2 - "tf plan": branch master
+Step #2 - "tf plan": run init
+Step #2 - "tf plan": [0m[1mInitializing modules...[0m
+Step #2 - "tf plan": Downloading terraform-google-modules/cloud-storage/google 2.2.0 for gcs_buckets...
+Step #2 - "tf plan": - gcs_buckets in .terraform/modules/gcs_buckets
+Step #2 - "tf plan": 
+Step #2 - "tf plan": [0m[1mInitializing the backend...[0m
+Step #2 - "tf plan": [0m[32m
+Step #2 - "tf plan": Successfully configured the backend "gcs"! Terraform will automatically
+Step #2 - "tf plan": use this backend unless the backend configuration changes.[0m
+Step #2 - "tf plan": 
+Step #2 - "tf plan": [0m[1mInitializing provider plugins...[0m
+Step #2 - "tf plan": - Finding hashicorp/google versions matching "~> 3.53"...
+Step #2 - "tf plan": - Finding latest version of hashicorp/random...
+Step #2 - "tf plan": - Installing hashicorp/random v3.1.0...
+Step #2 - "tf plan": - Installed hashicorp/random v3.1.0 (signed by HashiCorp)
+Step #2 - "tf plan": - Installing hashicorp/google v3.89.0...
+Step #2 - "tf plan": - Installed hashicorp/google v3.89.0 (signed by HashiCorp)
+Step #2 - "tf plan": 
+Step #2 - "tf plan": Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+Step #2 - "tf plan": selections it made above. Include this file in your version control repository
+Step #2 - "tf plan": so that Terraform can guarantee to make the same selections by default when
+Step #2 - "tf plan": you run "terraform init" in the future.[0m
+Step #2 - "tf plan": 
+Step #2 - "tf plan": [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+Step #2 - "tf plan": [0m[32m
+Step #2 - "tf plan": You may now begin working with Terraform. Try running "terraform plan" to see
+Step #2 - "tf plan": any changes that are required for your infrastructure. All Terraform commands
+Step #2 - "tf plan": should now work.
+Step #2 - "tf plan": 
+Step #2 - "tf plan": If you ever set or change modules or backend configuration for Terraform,
+Step #2 - "tf plan": rerun this command to reinitialize your working directory. If you forget, other
+Step #2 - "tf plan": commands will detect it and remind you to do so if necessary.[0m
+Step #2 - "tf plan": run validate
+Step #2 - "tf plan": [32m[1mSuccess![0m The configuration is valid.
+Step #2 - "tf plan": [0m
+Step #2 - "tf plan": run plan
+Step #2 - "tf plan": 
+Step #2 - "tf plan": Terraform used the selected providers to generate the following execution
+Step #2 - "tf plan": plan. Resource actions are indicated with the following symbols:
+Step #2 - "tf plan":   [32m+[0m create
+Step #2 - "tf plan": [0m
+Step #2 - "tf plan": Terraform will perform the following actions:
+Step #2 - "tf plan": 
+Step #2 - "tf plan": [1m  # module.gcs_buckets.google_storage_bucket.buckets["thgsx3ws"][0m will be created[0m[0m
+Step #2 - "tf plan": [0m  [32m+[0m[0m resource "google_storage_bucket" "buckets" {
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mbucket_policy_only[0m[0m          = (known after apply)
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mforce_destroy[0m[0m               = false
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mid[0m[0m                          = (known after apply)
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mlabels[0m[0m                      = {
+Step #2 - "tf plan":           [32m+[0m [0m"name" = "tfg-eu-thgsx3ws"
+Step #2 - "tf plan":         }
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mlocation[0m[0m                    = "EU"
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mname[0m[0m                        = "tfg-eu-thgsx3ws"
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mproject[0m[0m                     = "devtools-317213"
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mself_link[0m[0m                   = (known after apply)
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mstorage_class[0m[0m               = "MULTI_REGIONAL"
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0muniform_bucket_level_access[0m[0m = true
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0murl[0m[0m                         = (known after apply)
+Step #2 - "tf plan": 
+Step #2 - "tf plan":       [32m+[0m [0mversioning {
+Step #2 - "tf plan":           [32m+[0m [0m[1m[0menabled[0m[0m = false
+Step #2 - "tf plan":         }
+Step #2 - "tf plan":     }
+Step #2 - "tf plan": 
+Step #2 - "tf plan": [1m  # module.gcs_buckets.random_id.bucket_suffix[0m will be created[0m[0m
+Step #2 - "tf plan": [0m  [32m+[0m[0m resource "random_id" "bucket_suffix" {
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mb64_std[0m[0m     = (known after apply)
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mb64_url[0m[0m     = (known after apply)
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mbyte_length[0m[0m = 2
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mdec[0m[0m         = (known after apply)
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mhex[0m[0m         = (known after apply)
+Step #2 - "tf plan":       [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+Step #2 - "tf plan":     }
+Step #2 - "tf plan": 
+Step #2 - "tf plan": [0m[1mPlan:[0m 2 to add, 0 to change, 0 to destroy.
+Step #2 - "tf plan": [0m[90m
+Step #2 - "tf plan": â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[0m
+Step #2 - "tf plan": 
+Step #2 - "tf plan": Saved the plan to: terraform.plan
+Step #2 - "tf plan": 
+Step #2 - "tf plan": To perform exactly these actions, run the following command to apply:
+Step #2 - "tf plan":     terraform apply "terraform.plan"
+Step #2 - "tf plan": [0m[1mmodule.gcs_buckets.random_id.bucket_suffix: Creating...[0m[0m
+Step #2 - "tf plan": [0m[1mmodule.gcs_buckets.random_id.bucket_suffix: Creation complete after 0s [id=LxU][0m
+Step #2 - "tf plan": [0m[1mmodule.gcs_buckets.google_storage_bucket.buckets["thgsx3ws"]: Creating...[0m[0m
+Step #2 - "tf plan": [0m[1mmodule.gcs_buckets.google_storage_bucket.buckets["thgsx3ws"]: Creation complete after 1s [id=tfg-eu-thgsx3ws][0m
+Step #2 - "tf plan": [0m[1m[32m
+Step #2 - "tf plan": Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+Finished Step #2 - "tf plan"
+PUSH
+DONE
