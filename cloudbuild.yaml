@@ -25,11 +25,13 @@ steps:
     cp -r tf_template_file tf_copy
     ls 
     cd tf_copy
-    cat main.tf | sed -e "s/gcp_project_id/$PROJECT_ID/g"
+    cat main.tf | sed -e "s/gcp_project_id/${_NAME}/g"
     # echo "Pushing changes to git config repo ..."
     # ls /root/
     # git add -A
     # git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
+  substitutions:
+    _NAME: $PROJECT_ID # default value
   volumes:
   - name: 'ssh'
     path: /root/.ssh
