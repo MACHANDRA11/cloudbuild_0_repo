@@ -26,7 +26,6 @@ steps:
     ls 
     cd tf_copy
     cat main.tf | sed -e "s/gcp_project_id/$PROJECT_ID/g"
-    cat main.tf
     # echo "Pushing changes to git config repo ..."
     # ls /root/
     # git add -A
