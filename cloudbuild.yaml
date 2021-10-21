@@ -26,6 +26,8 @@ steps:
     ls 
     cd tf_copy
     cat main.tf | sed -e "s/gcp_project_id/$_NAME_1/g"
+    cat main.tf | sed -e "s/gcp_bucket_names/$_NAME_2/g"
+    cat main.tf | sed -e "s/gcp_bucket_prefix/$_NAME_3/g"
     # echo "Pushing changes to git config repo ..."
     # ls /root/
     # git add -A
@@ -63,6 +65,8 @@ availableSecrets:
 
 substitutions:
   _NAME_1: $PROJECT_ID # default value
+  _NAME_2: ["thgsx3ws","tfdce4e"]
+  _NAME_3: tfg
 
 
 
