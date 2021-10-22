@@ -32,9 +32,12 @@ steps:
     ls
     cat main.tf
     echo "Pushing changes to git config repo ..."
+    ls
+    rm -r ../tf_template_file
     ls /root/
     git add -A
     git commit -m "Updated with build ${BUILD_ID} from ${REPO_NAME} commit ${COMMIT_SHA}"
+    git push origin master
     
   volumes:
   - name: 'ssh'
