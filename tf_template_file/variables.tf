@@ -12,3 +12,9 @@ variable "prefix" {
   type        = string
   description = "bucket prefix"
 }
+
+variable "serviceapi" {
+  type        = string
+  description = "bucket prefix"
+  default =""
+}
