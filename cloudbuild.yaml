@@ -23,13 +23,14 @@ steps:
     git config --global user.name "MACHANDRA11"
     git config --global user.email "chandrakanth.maddana@mediaagility.com"
     git config --list
-    cp -r tf_template_file tf_copy
+    # cp -r tf_template_file tf_copy
     ls 
-    cd tf_copy
+    cd tf_template_file
     cat terraform.tfvars | sed -e "s/gcp_project_id/$_NAME_1/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
     ls
     cat terraform.tfvars | sed -e "s/gcp_bucket_names/$_NAME_2/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
     cat terraform.tfvars | sed -e "s/gcp_bucket_prefix/$_NAME_3/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
+    cat terraform.tfvars | sed -e "s/gcp_service_api/$_NAME_4/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars    
     ls
     cat main.tf
     echo "Pushing changes to git config repo ..."
@@ -50,7 +51,7 @@ steps:
   args:
   - '-c'
   - |
-      cd tf_copy
+      cd tf_template_file
       echo "branch $BRANCH_NAME"
       echo "run init"
       terraform init
@@ -72,6 +73,7 @@ substitutions:
   _NAME_1: $PROJECT_ID # default value
   _NAME_2: thga12
   _NAME_3: tfg
+  _NAME_4: iam
 
 
 
