@@ -71,9 +71,9 @@ availableSecrets:
 
 substitutions:
   _NAME_1: $PROJECT_ID # default value
-  _NAME_2: thga12
+  _NAME_2: thga112
   _NAME_3: tfg
-  _NAME_4: iam
+  # _NAME_4: iam
 
 
 
