@@ -30,7 +30,7 @@ steps:
     ls
     cat terraform.tfvars | sed -e "s/gcp_bucket_names/$_NAME_2/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
     cat terraform.tfvars | sed -e "s/gcp_bucket_prefix/$_NAME_3/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
-    # cat terraform.tfvars | sed -e "s/gcp_service_api/$_NAME_4/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars    
+    cat terraform.tfvars | sed -e "s/gcp_service_api/$_NAME_4/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars    
     ls
     cat main.tf
     echo "Pushing changes to git config repo ..."
@@ -73,7 +73,7 @@ substitutions:
   _NAME_1: $PROJECT_ID # default value
   _NAME_2: thga112
   _NAME_3: tfg
-  # _NAME_4: iam
+  _NAME_4: ''
 
 
 
