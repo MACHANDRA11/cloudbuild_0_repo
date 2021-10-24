@@ -35,8 +35,7 @@ steps:
         rm -r tf_copy 
     fi
     cp -r tf_template_file tf_copy
-    if []
-    ls 
+    ls -ltr
     cd tf_copy  
     sed -i "s/gcp_project_id/$_GCP_PROJECT_ID_1/g" terraform.tfvars
     sed -i "s/gcp_bucket_names/$_BUCKET_NAME_2/g" terraform.tfvars
