@@ -31,7 +31,11 @@ steps:
     git config --global user.name "MACHANDRA11"
     git config --global user.email "chandrakanth.maddana@mediaagility.com"
     git config --list
+    if [ -d tf_copy ]; then
+        rm -r tf_copy 
+    fi
     cp -r tf_template_file tf_copy
+    if []
     ls 
     cd tf_copy  
     sed -i "s/gcp_project_id/$_GCP_PROJECT_ID_1/g" terraform.tfvars
