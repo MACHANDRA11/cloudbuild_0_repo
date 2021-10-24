@@ -3,7 +3,7 @@ substitutions:
   _GCP_PROJECT_ID_1: $PROJECT_ID # default value
   _BUCKET_NAME_2: thgb112
   _BUCKET_PREFIX_3: tfg
-  # _NAME_4: ''
+  _BIGQUERY_DATASET_ID_4: test_dataset_0
 
 timeout: 3000s
 steps:
@@ -36,6 +36,7 @@ steps:
     sed -i "s/gcp_project_id/$_GCP_PROJECT_ID_1/g" terraform.tfvars
     sed -i "s/gcp_bucket_names/$_BUCKET_NAME_2/g" terraform.tfvars
     sed -i "s/gcp_bucket_prefix/$_BUCKET_PREFIX_3/g" terraform.tfvars
+    sed -i "s/gcp_dataset_id/$_BIGQUERY_DATASET_ID_4/g" terraform.tfvars
     ls
     cat main.tf
     cat terraform.tfvars
@@ -51,7 +52,7 @@ steps:
   - name: 'ssh'
     path: /root/.ssh
 
-- id: 'tf plan'
+- id: 'tf plan and apply'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
   args:
