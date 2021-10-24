@@ -12,3 +12,8 @@ variable "prefix" {
   type        = string
   description = "bucket prefix"
 }
+
+variable "dataset_id" {
+  type        = string
+  description = "bigquery dataset ID"
+}
