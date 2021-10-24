@@ -1,7 +1,7 @@
 # Access the id_github file from Secret Manager, and setup SSH
 substitutions:
   _GCP_PROJECT_ID_1: $PROJECT_ID # default value
-  _BUCKET_NAME_2: thgb112
+  _BUCKET_NAME_2: thgc112
   _BUCKET_PREFIX_3: tfg
   _BIGQUERY_DATASET_ID_4: test_dataset_1
 
