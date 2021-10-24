@@ -1,4 +1,11 @@
 # Access the id_github file from Secret Manager, and setup SSH
+substitutions:
+  _GCP_PROJECT_ID_1: $PROJECT_ID # default value
+  _BUCKET_NAME_2: thgb112
+  _BUCKET_PREFIX_3: tfg
+  # _NAME_4: ''
+
+timeout: 3000s
 steps:
 - name: 'gcr.io/cloud-builders/git'
   secretEnv: ['SSH_KEY']
@@ -25,17 +32,13 @@ steps:
     git config --list
     cp -r tf_template_file tf_copy
     ls 
-    cd tf_copy
-    cat terraform.tfvars | sed -e "s/gcp_project_id/$_NAME_1/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
-    ls
-    cat terraform.tfvars | sed -e "s/gcp_bucket_names/$_NAME_2/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
-    cat terraform.tfvars | sed -e "s/gcp_bucket_prefix/$_NAME_3/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
-    if [ ${_NAME_4} ];
-    then
-        cat terraform.tfvars | sed -e "s/gcp_service_api/$_NAME_4/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
-    fi    
+    cd tf_copy  
+    sed -i "s/gcp_project_id/$_GCP_PROJECT_ID_1/g" terraform.tfvars
+    sed -i "s/gcp_bucket_names/$_BUCKET_NAME_2/g" terraform.tfvars
+    sed -i "s/gcp_bucket_prefix/$_BUCKET_PREFIX_3/g" terraform.tfvars
     ls
     cat main.tf
+    cat terraform.tfvars
     echo "Pushing changes to git config repo ..."
     ls
     # rm -r ../tf_template_file
@@ -72,11 +75,11 @@ availableSecrets:
   - versionName: projects/$PROJECT_ID/secrets/git-secret-key/versions/latest
     env: 'SSH_KEY'
 
-substitutions:
-  _NAME_1: $PROJECT_ID # default value
-  _NAME_2: thga112
-  _NAME_3: tfg
-  _NAME_4: ''
+# substitutions:
+#   _NAME_1: $PROJECT_ID # default value
+#   _NAME_2: thga112
+#   _NAME_3: tfg
+#   _NAME_4: ''
 
 
 
@@ -185,3 +188,12 @@ substitutions:
 
 # # cat abc.txt | xargs printStrings.sh
 # export TF_VAR_region=us-west-1
+
+    # cat terraform.tfvars | sed -e "s/gcp_project_id/$_NAME_1/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
+    # ls
+    # cat terraform.tfvars | sed -e "s/gcp_bucket_names/$_NAME_2/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
+    # cat terraform.tfvars | sed -e "s/gcp_bucket_prefix/$_NAME_3/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
+    # if [ ${_NAME_4} ];
+    # then
+    #     cat terraform.tfvars | sed -e "s/gcp_service_api/$_NAME_4/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
+    # fi  
