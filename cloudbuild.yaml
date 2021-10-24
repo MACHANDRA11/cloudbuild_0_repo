@@ -4,6 +4,7 @@ substitutions:
   _BUCKET_NAME_2: thgc112
   _BUCKET_PREFIX_3: tfg
   _BIGQUERY_DATASET_ID_4: test_dataset_1
+  _DESTROY_INFRA_AFTER_CREATE: 'false'
 
 timeout: 3000s
 steps:
@@ -70,6 +71,17 @@ steps:
   volumes:
   - name: 'ssh'
     path: /root/.ssh
+
+- id: 'Destroy Infra'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args: 
+    - '-c'
+    - |
+      if [ "${_DESTROY_INFRA_AFTER_CREATE}" = "true" ];then
+        cd tf_copy
+        terraform destroy -auto-approve
+      fi
 
 availableSecrets:
   secretManager:
