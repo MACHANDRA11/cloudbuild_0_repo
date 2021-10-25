@@ -1,4 +1,4 @@
-CICD for Terraform
+CICD for Terraform:
 This Terraform Blueprint can be deployed in a CICD pipeline using Cloud Build to continuously deploy and validate the infrastructure on GCP. 
 
 Used following cloud builder images:
