@@ -1,4 +1,4 @@
-project_id = "sf"
-names = ["thge112"]
-prefix = "tfg"
-dataset_id = "test_dataset_2"
+project_id = "sda"
+names = ["sad"]
+prefix = "dsaf"
+dataset_id = "asd"
