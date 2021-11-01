@@ -6,7 +6,7 @@ substitutions:
   _BIGQUERY_DATASET_ID_4: test_dataset_2
   _DESTROY_INFRA_AFTER_CREATE: 'false'
   _FOLDER_NAME_5: test_folder11
-  _ORG_ID_6: '275042901724'
+  # _ORG_ID_6: '275042901724'
 
 timeout: 3000s
 steps:
@@ -44,7 +44,7 @@ steps:
     sed -i "s/gcp_bucket_prefix/$_BUCKET_PREFIX_3/g" terraform.tfvars
     sed -i "s/gcp_dataset_id/$_BIGQUERY_DATASET_ID_4/g" terraform.tfvars
     sed -i "s/gcp_folder_name/$_FOLDER_NAME_5/g" terraform.tfvars
-    sed -i "s/gcp_org_id/$_ORG_ID_6/g" terraform.tfvars
+    # sed -i "s/gcp_org_id/$_ORG_ID_6/g" terraform.tfvars
     ls
     cat main.tf
     cat folder.tf
