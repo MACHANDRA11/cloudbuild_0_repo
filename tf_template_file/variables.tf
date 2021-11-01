@@ -17,3 +17,13 @@ variable "dataset_id" {
   type        = string
   description = "bigquery dataset ID"
 }
+
+variable "folder_name" {
+  type        = string
+  description = "The folder’s display name"
+}
+
+variable "org_id" {
+  type        = number
+  description = "organization id"
+}
