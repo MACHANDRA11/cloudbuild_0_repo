@@ -44,7 +44,6 @@ steps:
     sed -i "s/gcp_bucket_prefix/$_BUCKET_PREFIX_3/g" terraform.tfvars
     sed -i "s/gcp_dataset_id/$_BIGQUERY_DATASET_ID_4/g" terraform.tfvars
     sed -i "s/gcp_folder_name/$_FOLDER_NAME_5/g" terraform.tfvars
-    # sed -i "s/gcp_org_id/$_ORG_ID_6/g" terraform.tfvars
     ls
     cat main.tf
     cat folder.tf
@@ -218,3 +217,4 @@ availableSecrets:
     # then
     #     cat terraform.tfvars | sed -e "s/gcp_service_api/$_NAME_4/g" >terraform1.tfvars | mv terraform1.tfvars terraform.tfvars
     # fi  
+    # sed -i "s/gcp_org_id/$_ORG_ID_6/g" terraform.tfvars
