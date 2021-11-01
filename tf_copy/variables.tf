@@ -23,7 +23,8 @@ variable "folder_name" {
   description = "The folder’s display name"
 }
 
-variable "org_id" {
-  type        = number
-  description = "organization id"
-}
+# variable "org_id" {
+#   type        = number
+#   description = "organization id"
+# }
+#vv
