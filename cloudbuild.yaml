@@ -47,6 +47,7 @@ steps:
     sed -i "s/gcp_org_id/$_ORG_ID_6/g" terraform.tfvars
     ls
     cat main.tf
+    cat folder.tf
     cat terraform.tfvars
     echo "Pushing changes to git config repo ..."
     ls
